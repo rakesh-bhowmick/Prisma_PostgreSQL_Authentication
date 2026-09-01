@@ -1,10 +1,14 @@
 import "dotenv/config";
 import express from "express";
+import routes from "./routes/index.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
+
+// connect routes
+app.use(routes);
 
 app.get("/", (req, res) => {
   console.log("Backend connacted successfully");
