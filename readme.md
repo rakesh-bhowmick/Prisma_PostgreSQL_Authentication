@@ -4,6 +4,7 @@ npm init
 npm i express
 npm i nodemon
 npm i dotenv
+npm i bcrypt (for hash password)
 
 <!-- package.json -->
 
