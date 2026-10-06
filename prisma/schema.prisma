@@ -19,7 +19,7 @@ model User {
 
 model Movie {
   id            String          @id @default(uuid())
-  movieName     String
+  movieName     String @unique
   movieDesc     String
   movieRuntime  String
   realseDate    String
