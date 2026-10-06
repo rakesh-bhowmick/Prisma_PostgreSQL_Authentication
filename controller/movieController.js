@@ -2,8 +2,11 @@ import { prisma } from "../db/db.config.js";
 
 const createMovie = async (req, res) => {
   try {
-    const { movieName, movieDesc, movieRuntime, realseDate, createdBy } =
-      req.body;
+    const { movieName, movieDesc, movieRuntime, realseDate } = req.body;
+
+const createdBy = req.user.id;
+
+
     const existingMovie = await prisma.movie.findUnique({
       where: {
         movieName,

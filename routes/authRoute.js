@@ -12,7 +12,7 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.post("/logout", logout);
 
-router.post("/createMovie", createMovie);
+// router.post("/createMovie", createMovie);
 
 router.get("", (req, res) => {
   res.status(200).json({ message: "Auth API called" });
