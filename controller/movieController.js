@@ -97,7 +97,7 @@ const deleteSingleMovie = async (req, res) => {
     }
 
     const deleteMovie = await prisma.movie.delete({
-      where: id,
+      where: { id },
     });
 
     return res.status(200).json({

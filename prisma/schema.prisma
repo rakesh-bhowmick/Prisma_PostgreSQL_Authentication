@@ -18,14 +18,15 @@ model User {
 }
 
 model Movie {
-  id            String          @id @default(uuid())
-  movieName     String @unique
-  movieDesc     String
-  movieRuntime  String
-  realseDate    String
-  createdBy     String
-  createdAt     DateTime        @default(now())
-  creator       User            @relation("MovieCreator", fields: [createdBy], references: [id], onDelete: Cascade)
+  id           String   @id @default(uuid())
+  movieName    String   @unique
+  movieDesc    String
+  movieRuntime String
+  realseDate   String
+  createdBy    String
+  createdAt    DateTime @default(now())
+  creator      User     @relation("MovieCreator", fields: [createdBy], references: [id], onDelete: Cascade)
+
   watchListItem WatchListItem[]
 }
 
@@ -37,8 +38,10 @@ model WatchListItem {
   notes     String?
   createAt  DateTime        @default(now())
   updatedAt DateTime        @default(now())
-  moview    Movie           @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  movie     Movie           @relation(fields: [movieId], references: [id], onDelete: Cascade)
   user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, movieId], name: "userId_movieId")
 }
 
 enum Watchliststatus {

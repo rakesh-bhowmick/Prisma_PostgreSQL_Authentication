@@ -5,7 +5,7 @@ import {
   getSingleMovie,
   deleteSingleMovie,
 } from "../controller/movieController.js";
-import { authMiddleware } from "../middleware/authMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = Router();
 
