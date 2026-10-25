@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(routes);
 
 app.get("/", (req, res) => {
-  console.log("Backend connacted successfully");
-  return res.send("Backend connacted successfully");
+  console.log("Prisma Auth Backend connacted successfully");
+  return res.send("Prisma Auth Backend connacted successfully");
 });
 
 app.listen(PORT, () => {
